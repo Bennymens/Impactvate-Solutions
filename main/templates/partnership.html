@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partnerships | Impactvate Solutions</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/style.css' %}" />
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <div class="navbar-inner">
+        <a href="{% url 'home' %}" class="logo">
+          <img
+            src="{% static 'main/img/impact_logo-removebg-preview.png' %}"
+            alt="Impactvate Solutions Logo"
+            class="logo-mark"
+          />
+          <span class="logo-text">Impactvate Solutions</span>
+        </a>
+
+        <label
+          for="nav-toggle"
+          class="hamburger"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="nav-links">
+          <a href="{% url 'about' %}">About Us</a>
+          <a href="{% url 'services' %}">Services</a>
+          <a href="{% url 'home' %}#sectors">Sectors</a>
+          <a href="{% url 'partnership' %}">Partnerships</a>
+          <a href="{% url 'contact' %}">Contact</a>
+          <a href="{% url 'contact' %}" class="btn btn-primary nav-cta"
+            >Partner With Us</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- ================= PARTNERSHIP HERO ================= -->
+    <section class="hero partnership-hero">
+      <div class="hero-gradient"></div>
+      <div class="container hero-content">
+        <p class="breadcrumb">
+          <a href="{% url 'home' %}">Home</a> &nbsp;/&nbsp;
+          <span>Partnerships</span>
+        </p>
+        <h1>
+          Built for Collaboration<br />
+          and Long-Term Impact
+        </h1>
+        <p class="hero-subtitle">
+          We work with development agencies, governments, investors, and private
+          sector partners to turn commitments into measurable results on the
+          ground.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= WHY PARTNER ================= -->
+    <section class="section section-light partnership-why">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Why Partner With Us</h2>
+          <p>What Makes Impactvate a Trusted Implementation Partner</p>
+        </div>
+
+        <div class="why-grid">
+          <article class="why-item">
+            <h3>Local Expertise, Global Standards</h3>
+            <p>
+              We understand the nuances of West African markets, regulatory
+              environments, and community dynamics while delivering to
+              international quality benchmarks.
+            </p>
+          </article>
+
+          <article class="why-item">
+            <h3>Implementation Focus</h3>
+            <p>
+              We don’t just write reports — we get things done. Our team has
+              hands-on experience turning strategies into operational realities.
+            </p>
+          </article>
+
+          <article class="why-item">
+            <h3>Community-Centric Approach</h3>
+            <p>
+              Our projects succeed because we invest in genuine stakeholder
+              engagement, ensuring local ownership and long-term sustainability.
+            </p>
+          </article>
+
+          <article class="why-item">
+            <h3>Adaptive &amp; Agile</h3>
+            <p>
+              We excel in complex, dynamic environments where flexibility and
+              problem-solving are essential.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VALUE PROPOSITION ================= -->
+    <section class="section section-light partnership-value">
+      <div class="container partnership-value-inner">
+        <div class="value-copy">
+          <h2>Our Value Proposition</h2>
+          <p>
+            For
+            <strong>international development agencies and multilaterals</strong
+            >, we provide trusted local implementation capacity with
+            accountability systems you can rely on.
+          </p>
+          <p>
+            For <strong>private sector partners</strong>, we de-risk
+            community-facing investments and ensure social license to operate.
+          </p>
+          <p>
+            For <strong>funders and impact investors</strong>, we turn
+            commitments into measurable outcomes.
+          </p>
+        </div>
+
+        <aside class="value-highlight">
+          <h3>Who We Work With</h3>
+          <ul>
+            <li>Development agencies &amp; multilaterals</li>
+            <li>Foundations &amp; philanthropic funds</li>
+            <li>Impact and blended finance investors</li>
+            <li>Private sector companies &amp; project developers</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= PARTNERSHIP OPPORTUNITIES ================= -->
+    <section class="section section-light partnership-opportunities">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Partnership Opportunities</h2>
+          <p>Flexible Collaboration Models</p>
+        </div>
+
+        <div class="opportunities-grid">
+          <article class="opportunity-card">
+            <h3>Consortium Partnerships</h3>
+            <p>
+              Consortium partnerships for donor-funded projects where we lead or
+              support implementation in West Africa.
+            </p>
+          </article>
+
+          <article class="opportunity-card">
+            <h3>Subcontracting Support</h3>
+            <p>
+              Subcontracting arrangements for specific implementation
+              components, field operations, or community engagement.
+            </p>
+          </article>
+
+          <article class="opportunity-card">
+            <h3>Joint Ventures</h3>
+            <p>
+              Joint venture partnerships for targeted initiatives that combine
+              technical, financial, and local delivery capacity.
+            </p>
+          </article>
+
+          <article class="opportunity-card">
+            <h3>Retainer Advisory</h3>
+            <p>
+              Retainer arrangements for ongoing advisory, partnership
+              management, and implementation support.
+            </p>
+          </article>
+
+          <article class="opportunity-card">
+            <h3>Co-Design of Pilots</h3>
+            <p>
+              Co-design of innovative pilot projects to test, learn, and scale
+              new approaches in priority sectors.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PARTNERSHIP CONTACT ================= -->
+    <section class="section section-light partnership-contact">
+      <div class="container partnership-contact-inner">
+        <div class="partnership-contact-copy">
+          <h2>Let’s Explore a Partnership</h2>
+          <p>
+            Share your priorities, and we’ll work with you to shape a
+            partnership model that fits your objectives and context.
+          </p>
+        </div>
+
+        <div class="partnership-contact-card">
+          <h3>Impactvate Solutions</h3>
+          <p>Accra, Ghana</p>
+          <p>
+            Email:
+            <a href="mailto:info@impactvate.com">info@impactvate.com</a>
+          </p>
+          <p>Phone: +233 20 300 5311</p>
+          <p>
+            LinkedIn:
+            <a href="#" aria-label="Impactvate Solutions on LinkedIn"
+              >Impactvate Solutions</a
+            >
+          </p>
+          <a href="contact.html" class="btn btn-primary btn-block">
+            Contact Our Team
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3>Impactvate Solutions</h3>
+          <p>
+            Bridging the execution gap in Africa's development ecosystem through
+            sustainable, community-driven projects.
+          </p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn" class="social-circle">in</a>
+            <a href="#" aria-label="X" class="social-circle">X</a>
+            <a href="#" aria-label="Facebook" class="social-circle">f</a>
+            <a href="#" aria-label="Instagram" class="social-circle">IG</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'home' %}#sectors">Sectors</a></li>
+            <li><a href="{% url 'partnership' %}">Partnerships</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Accra, Ghana</p>
+          <p><a href="mailto:info@impactvate.com">info@impactvate.com</a></p>
+          <p>+233 20 300 5311</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Impactvate Solutions. All rights reserved.</p>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+      <img
+        src="{% static 'main/img/impact_logo-removebg-preview.png' %}"
+        alt="Impactvate Logo"
+        class="footer-logo"
+      />
+    </footer>
+  </body>
+</html>

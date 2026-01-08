@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Impactvate Solutions</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/style.css' %}" />
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <div class="navbar-inner">
+        <a href="{% url 'home' %}" class="logo">
+          <img
+            src="{% static 'main/img/impact_logo-removebg-preview.png' %}"
+            alt="Impactvate Solutions Logo"
+            class="logo-mark"
+          />
+          <span class="logo-text">Impactvate Solutions</span>
+        </a>
+
+        <label
+          for="nav-toggle"
+          class="hamburger"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="nav-links">
+          <a href="{% url 'about' %}">About Us</a>
+          <a href="{% url 'services' %}">Services</a>
+          <a href="{% url 'home' %}#sectors">Sectors</a>
+          <a href="{% url 'home' %}#partnerships">Partnerships</a>
+          <a href="{% url 'contact' %}">Contact</a>
+          <a href="{% url 'contact' %}" class="btn btn-primary nav-cta"
+            >Partner With Us</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- ================= SERVICES HERO ================= -->
+    <section class="hero services-hero">
+      <div class="hero-gradient"></div>
+      <div class="container hero-content">
+        <p class="breadcrumb">
+          <a href="{% url 'home' %}">Home</a> &nbsp;/&nbsp;
+          <span>Services</span>
+        </p>
+        <h1>
+          From Strategy to<br />
+          Implementation on the Ground
+        </h1>
+        <p class="hero-subtitle">
+          We design, execute, and scale impact-focused initiatives across West
+          Africa – with community realities and circular economy principles at
+          the center.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= CORE SERVICES ================= -->
+    <section class="section section-light services-core">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Core Services</h2>
+          <p>End-to-End Support Across the Project Lifecycle</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Project Design &amp; Feasibility Studies</h3>
+            <p>
+              Context-appropriate project design grounded in community realities
+              and circular economy principles.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Implementation Support</h3>
+            <p>
+              End-to-end project management, stakeholder coordination, and
+              adaptive management.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Community Engagement &amp; Mobilization</h3>
+            <p>
+              Culturally-informed strategies that ensure local ownership and
+              long-term sustainability.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Monitoring, Evaluation &amp; Learning</h3>
+            <p>
+              Results-focused M&amp;E frameworks with real-time adaptation
+              mechanisms.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Capacity Building</h3>
+            <p>
+              Training and institutional strengthening for local partners and
+              beneficiaries.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Strategic Advisory</h3>
+            <p>
+              Policy analysis, market assessments, and investment facilitation
+              for mission-aligned capital.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHERE WE EXCEL ================= -->
+    <section class="section section-light services-excel">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Where We Excel</h2>
+          <p>Deep Thematic and Sector Experience</p>
+        </div>
+
+        <div class="excel-grid">
+          <article class="excel-block">
+            <h3>Agriculture &amp; Food Systems</h3>
+            <ul>
+              <li>
+                Climate-smart agriculture implementation and farmer cooperative
+                strengthening
+              </li>
+              <li>
+                Agricultural value chain development with circular economy
+                integration
+              </li>
+              <li>Smallholder finance and market linkage facilitation</li>
+              <li>Post-harvest loss reduction and agro-processing solutions</li>
+            </ul>
+          </article>
+
+          <article class="excel-block">
+            <h3>Renewable Energy &amp; Clean Technology</h3>
+            <ul>
+              <li>Mini-grid and off-grid solar project implementation</li>
+              <li>Community energy planning and productive use strategies</li>
+              <li>Social impact assessments and benefit-sharing frameworks</li>
+              <li>Energy access monitoring and last-mile distribution</li>
+            </ul>
+          </article>
+
+          <article class="excel-block">
+            <h3>Youth Development &amp; Employment</h3>
+            <ul>
+              <li>
+                Green economy skills training and entrepreneurship development
+              </li>
+              <li>
+                Youth-led sustainability enterprises and cooperative models
+              </li>
+              <li>TVET curriculum development for circular economy sectors</li>
+              <li>
+                Youth employment programs tied to agriculture and renewable
+                energy
+              </li>
+            </ul>
+          </article>
+
+          <article class="excel-block">
+            <h3>Cross-Cutting Expertise</h3>
+            <ul>
+              <li>Circular economy and waste-to-value solutions</li>
+              <li>Gender and social inclusion mainstreaming</li>
+              <li>Climate adaptation and resilience building</li>
+              <li>Public-private-community partnership facilitation</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA STRIP ================= -->
+    <section class="cta-strip">
+      <div class="container cta-inner">
+        <h2>Ready to Co-Design Your Next Initiative?</h2>
+        <a href="contact.html" class="btn btn-primary">Talk to Our Team</a>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3>Impactvate Solutions</h3>
+          <p>
+            Bridging the execution gap in Africa's development ecosystem through
+            sustainable, community-driven projects.
+          </p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn" class="social-circle">in</a>
+            <a href="#" aria-label="X" class="social-circle">X</a>
+            <a href="#" aria-label="Facebook" class="social-circle">f</a>
+            <a href="#" aria-label="Instagram" class="social-circle">IG</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'home' %}#sectors">Sectors</a></li>
+            <li><a href="{% url 'home' %}#partnerships">Partnerships</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Accra, Ghana</p>
+          <p><a href="mailto:info@impactvate.com">info@impactvate.com</a></p>
+          <p>+233 20 300 5311</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Impactvate Solutions. All rights reserved.</p>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+      <img
+        src="{% static 'main/img/impact_logo-removebg-preview.png' %}"
+        alt="Impactvate Logo"
+        class="footer-logo"
+      />
+    </footer>
+  </body>
+</html>

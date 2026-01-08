@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Impactvate Solutions</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/style.css' %}" />
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <div class="navbar-inner">
+        <a href="{% url 'home' %}" class="logo">
+          <img
+            src="{% static 'main/img/impact_logo-removebg-preview.png' %}"
+            alt="Impactvate Solutions Logo"
+            class="logo-mark"
+          />
+          <span class="logo-text">Impactvate Solutions</span>
+        </a>
+
+        <label
+          for="nav-toggle"
+          class="hamburger"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="nav-links">
+          <a href="{% url 'about' %}">About Us</a>
+          <a href="{% url 'home' %}#services">Services</a>
+          <a href="{% url 'home' %}#sectors">Sectors</a>
+          <a href="{% url 'home' %}#partnerships">Partnerships</a>
+          <a href="{% url 'contact' %}">Contact</a>
+          <a href="{% url 'contact' %}" class="btn btn-primary nav-cta"
+            >Partner With Us</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- ================= CONTACT CONTENT ================= -->
+    <main class="section section-light contact-page">
+      <div class="container">
+        <div class="contact-layout">
+          <!-- Form card -->
+          <section class="contact-card">
+            <header class="contact-header">
+              <h1>Contact Us</h1>
+              <p>
+                Tell us a bit about your initiative, and we’ll follow up with
+                next steps within 2–3 business days.
+              </p>
+            </header>
+
+            <form class="contact-form" method="post">
+              {% csrf_token %}
+              <div class="form-row form-row-two">
+                <div class="form-field">
+                  <label for="id_name">Full Name</label>
+                  <input
+                    type="text"
+                    id="id_name"
+                    name="name"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="id_email">Email Address</label>
+                  <input
+                    type="email"
+                    id="id_email"
+                    name="email"
+                    placeholder="name@example.com"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row form-row-two">
+                <div class="form-field">
+                  <label for="id_organisation">Organisation</label>
+                  <input
+                    type="text"
+                    id="id_organisation"
+                    name="organisation"
+                    placeholder="Organisation name"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="id_country">Country</label>
+                  <select id="id_country" name="country">
+                    <option value="">Select your country</option>
+                    <option value="ghana">Ghana</option>
+                    <option value="nigeria">Nigeria</option>
+                    <option value="cote-divoire">Côte d’Ivoire</option>
+                    <option value="senegal">Senegal</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field form-field-phone-code">
+                  <label for="id_phone_code">Phone Number</label>
+                  <div class="phone-input">
+                    <select id="id_phone_code" name="phone_code">
+                      <option value="+233">+233</option>
+                      <option value="+234">+234</option>
+                      <option value="+225">+225</option>
+                      <option value="+221">+221</option>
+                    </select>
+                    <input
+                      type="tel"
+                      id="id_phone"
+                      name="phone"
+                      placeholder="Phone number"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="id_help">How can we help?</label>
+                  <select id="id_help" name="help">
+                    <option value="">Select an option</option>
+                    <option value="project-design">
+                      Project Design &amp; Feasibility
+                    </option>
+                    <option value="implementation">
+                      Implementation Support
+                    </option>
+                    <option value="m-e">Monitoring &amp; Evaluation</option>
+                    <option value="capacity">Capacity Building</option>
+                    <option value="advisory">Strategic Advisory</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="id_message">Tell us more</label>
+                  <textarea
+                    id="id_message"
+                    name="message"
+                    rows="5"
+                    placeholder="Share any context, timelines, and what success looks like."
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <button type="submit" class="btn btn-primary btn-block">
+                  Send Message
+                </button>
+              </div>
+            </form>
+            {% if success %}
+            <p class="success-message">Message sent successfully!</p>
+            {% endif %}
+          </section>
+
+          <!-- Info card -->
+          <aside class="contact-info-card">
+            <h2>Impactvate Solutions</h2>
+            <p class="info-intro">
+              Based in Accra, Ghana, working with partners across West Africa
+              and beyond.
+            </p>
+
+            <div class="info-group">
+              <h3>Email</h3>
+              <p>
+                <a href="mailto:info@impactvate.com">info@impactvate.com</a>
+              </p>
+            </div>
+
+            <div class="info-group">
+              <h3>Phone</h3>
+              <p>+233 (0) 000 000 000</p>
+            </div>
+
+            <div class="info-group">
+              <h3>Office</h3>
+              <p>Accra, Ghana</p>
+            </div>
+
+            <div class="info-group">
+              <h3>Connect</h3>
+              <div class="socials">
+                <a href="#" aria-label="LinkedIn" class="social-circle">in</a>
+                <a href="#" aria-label="X" class="social-circle">X</a>
+                <a href="#" aria-label="Facebook" class="social-circle">f</a>
+                <a href="#" aria-label="Instagram" class="social-circle">IG</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3>Impactvate Solutions</h3>
+          <p>
+            Bridging the execution gap in Africa's development ecosystem through
+            sustainable, community-driven projects.
+          </p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn" class="social-circle">in</a>
+            <a href="#" aria-label="X" class="social-circle">X</a>
+            <a href="#" aria-label="Facebook" class="social-circle">f</a>
+            <a href="#" aria-label="Instagram" class="social-circle">IG</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'home' %}#services">Services</a></li>
+            <li><a href="{% url 'home' %}#sectors">Sectors</a></li>
+            <li><a href="{% url 'home' %}#partnerships">Partnerships</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Accra, Ghana</p>
+          <p><a href="mailto:info@impactvate.com">info@impactvate.com</a></p>
+          <p>+233 20 300 5311</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Impactvate Solutions. All rights reserved.</p>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+      <img
+        src="{% static 'main/img/impact_logo-removebg-preview.png' %}"
+        alt="Impactvate Logo"
+        class="footer-logo"
+      />
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impactvate Solutions | Delivering Measurable Impact</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/style.css' %}" />
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <div class="navbar-inner">
+        <a href="{% url 'home' %}" class="logo">
+          <img
+            src="{% static 'main/img/impact_logo-removebg-preview.png' %}"
+            alt="Impactvate Solutions Logo"
+            class="logo-mark"
+          />
+          <span class="logo-text">Impactvate Solutions</span>
+        </a>
+
+        <label
+          for="nav-toggle"
+          class="hamburger"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="nav-links">
+          <a href="{% url 'about' %}">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#sectors">Sectors</a>
+          <a href="#partnerships">Partnerships</a>
+          <a href="{% url 'contact' %}">Contact</a>
+          <a href="{% url 'contact' %}" class="btn btn-primary nav-cta"
+            >Partner With Us</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <img
+        src="{% static 'main/img/hero-image.jpeg' %}"
+        alt="Hero Background"
+        class="hero-image"
+      />
+      <div class="hero-gradient"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">
+          Bridging the execution gap in Africa's development ecosystem
+        </p>
+        <h1>
+          We Turn Development<br />
+          Strategies Into<br />
+          Measurable Impact
+        </h1>
+        <p class="hero-subtitle">
+          We design and execute sustainable projects that empower communities
+          and deliver real results.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Partner With Us</a>
+          <a href="#services" class="btn btn-outline">Explore Our Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHAT WE DO ================= -->
+    <section id="services" class="section section-light">
+      <div class="container">
+        <div class="section-heading">
+          <h2>What We Do</h2>
+          <p>Driving Sustainable Change Across West Africa</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-icon card-icon-check"></div>
+            <h3>Project Design &amp; Feasibility</h3>
+            <p>
+              Structuring bankable, impact-focused initiatives from concept to
+              implementation roadmap.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon card-icon-bullseye"></div>
+            <h3>Implementation Support</h3>
+            <p>
+              Translating strategy into on-the-ground delivery with clear
+              milestones and accountability.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon card-icon-people"></div>
+            <h3>Community Engagement</h3>
+            <p>
+              Building local partnerships that drive ownership, inclusion, and
+              long-term sustainability.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon card-icon-plus"></div>
+            <h3>Monitoring &amp; Evaluation</h3>
+            <p>
+              Measuring what matters so every project delivers tangible,
+              verifiable impact.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon card-icon-grid"></div>
+            <h3>Capacity Building</h3>
+            <p>
+              Strengthening systems, teams, and institutions to sustain results
+              beyond project timelines.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon card-icon-star"></div>
+            <h3>Strategic Advisory</h3>
+            <p>
+              Guiding investors, donors, and governments with insight grounded
+              in local realities.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY IMPACTVATE ================= -->
+    <section class="section section-accent" id="about">
+      <div class="container">
+        <div class="section-heading section-heading-light">
+          <h2>Why Impactvate?</h2>
+          <p>Local Expertise. Global Standards. Proven Execution.</p>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar-icon">🌍</div>
+            <h3>West African Insight</h3>
+            <p>Deep understanding of local markets, cultures, and systems.</p>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-icon">🛠️</div>
+            <h3>Hands-On Execution</h3>
+            <p>From strategy to delivery, we stay embedded on the ground.</p>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-icon">🤝</div>
+            <h3>Community Focused</h3>
+            <p>Empowering local ownership for enduring, inclusive impact.</p>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-icon">⚙️</div>
+            <h3>Adaptive &amp; Agile</h3>
+            <p>Flexible, data-informed delivery tailored to real conditions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA STRIP ================= -->
+    <section class="cta-strip">
+      <div class="container cta-inner">
+        <h2>Ready to Create Lasting Impact?</h2>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer" id="contact">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3>Impactvate Solutions</h3>
+          <p>
+            Bridging the execution gap in Africa's development ecosystem through
+            sustainable, community-driven projects.
+          </p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn" class="social-circle">in</a>
+            <a href="#" aria-label="X" class="social-circle">X</a>
+            <a href="#" aria-label="Facebook" class="social-circle">f</a>
+            <a href="#" aria-label="Instagram" class="social-circle">IG</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#sectors">Sectors</a></li>
+            <li><a href="#partnerships">Partnerships</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Accra, Ghana</p>
+          <p><a href="mailto:info@impactvate.com">info@impactvate.com</a></p>
+          <p>+233 20 300 5311</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Impactvate Solutions. All rights reserved.</p>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+      <img
+        src="{% static 'main/img/impact_logo-removebg-preview.png' %}"
+        alt="Impactvate Logo"
+        class="footer-logo"
+      />
+    </footer>
+  </body>
+</html>

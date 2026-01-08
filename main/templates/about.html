@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Impactvate Solutions</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/style.css' %}" />
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <div class="navbar-inner">
+        <a href="{% url 'home' %}" class="logo">
+          <img
+            src="{% static 'main/img/impact_logo-removebg-preview.png' %}"
+            alt="Impactvate Solutions Logo"
+            class="logo-mark"
+          />
+          <span class="logo-text">Impactvate Solutions</span>
+        </a>
+
+        <label
+          for="nav-toggle"
+          class="hamburger"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="nav-links">
+          <a href="{% url 'about' %}">About Us</a>
+          <a href="{% url 'home' %}#services">Services</a>
+          <a href="{% url 'home' %}#sectors">Sectors</a>
+          <a href="{% url 'home' %}#partnerships">Partnerships</a>
+          <a href="{% url 'contact' %}">Contact</a>
+          <a href="{% url 'contact' %}" class="btn btn-primary nav-cta"
+            >Partner With Us</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- ================= ABOUT HERO ================= -->
+    <section class="hero about-hero">
+      <div class="hero-gradient"></div>
+      <div class="container hero-content">
+        <p class="breadcrumb">
+          <a href="{% url 'home' %}">Home</a> &nbsp;/&nbsp;
+          <span>About Us</span>
+        </p>
+        <h1>
+          We Turn Development<br />
+          Strategies Into<br />
+          Measurable Impact
+        </h1>
+        <p class="hero-subtitle">
+          Bridging the execution gap in Africa’s development ecosystem.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT INTRO ================= -->
+    <section class="section section-light about-intro">
+      <div class="container about-intro-inner">
+        <div class="about-text">
+          <h2>About Impactvate Solutions</h2>
+          <p class="about-lead">
+            <strong>Impactvate Solutions</strong> ensures development projects
+            in Africa go beyond strategy and into measurable implementation.
+          </p>
+          <p>
+            Based in Accra, Ghana, we combine deep local expertise with
+            international best practices to deliver sustainable, site-specific,
+            impactful outcomes.
+          </p>
+          <p>
+            We exist because too many development initiatives fail at the
+            execution stage. Brilliant strategies aren’t enough; successful
+            development demands a meticulous, adaptive, and community-centered
+            approach. That’s where we step in – to bridge the execution gap,
+            turning well-designed strategies into operational realities that
+            empower communities, strengthen institutions, and drive inclusive
+            growth.
+          </p>
+        </div>
+
+        <aside class="about-visual">
+          <div class="about-image-card">
+            <div class="about-image-placeholder">
+              <!-- Replace this div with an <img> tag if you have an image -->
+            </div>
+            <div class="about-tags">
+              <span class="tag-chip">Sustainable Development</span>
+              <span class="tag-chip">Circular Economy</span>
+              <span class="tag-chip">Inclusive, Local Growth</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= MISSION & VISION ================= -->
+    <section class="section section-light about-mission">
+      <div class="container">
+        <div class="about-mission-grid">
+          <article class="card mission-card">
+            <div class="card-icon card-icon-bullseye"></div>
+            <h3>Our Mission</h3>
+            <p>
+              To design, implement, and scale sustainable development and
+              circular economy projects that empower communities, strengthen
+              institutions, and accelerate inclusive growth.
+            </p>
+          </article>
+
+          <article class="card mission-card">
+            <div class="card-icon card-icon-people"></div>
+            <h3>Our Vision</h3>
+            <p>
+              To become Africa’s leading catalyst for impact-driven project
+              execution – where innovation meets implementation for lasting
+              change.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CORE VALUES ================= -->
+    <section class="section section-accent about-values">
+      <div class="container">
+        <div class="section-heading section-heading-light">
+          <h2>Our Core Values</h2>
+          <p>Guiding What We Do</p>
+        </div>
+
+        <div class="values-row">
+          <div class="value-item">
+            <div class="value-icon">💛</div>
+            <h3>Integrity</h3>
+            <p>Transparency, accountability, and trust in every partnership.</p>
+          </div>
+
+          <div class="value-item">
+            <div class="value-icon">💡</div>
+            <h3>Innovation</h3>
+            <p>
+              Creative, adaptive solutions rooted in real-world constraints.
+            </p>
+          </div>
+
+          <div class="value-item">
+            <div class="value-icon">🤝</div>
+            <h3>Collaboration</h3>
+            <p>Co-creating outcomes with communities, clients, and partners.</p>
+          </div>
+
+          <div class="value-item">
+            <div class="value-icon">🌱</div>
+            <h3>Sustainability</h3>
+            <p>
+              Long-term environmental and social resilience at the core of our
+              work.
+            </p>
+          </div>
+
+          <div class="value-item">
+            <div class="value-icon">⭐</div>
+            <h3>Excellence</h3>
+            <p>Global standards of delivery tailored to local realities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3>Impactvate Solutions</h3>
+          <p>
+            Bridging the execution gap in Africa's development ecosystem through
+            sustainable, community-driven projects.
+          </p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn" class="social-circle">in</a>
+            <a href="#" aria-label="X" class="social-circle">X</a>
+            <a href="#" aria-label="Facebook" class="social-circle">f</a>
+            <a href="#" aria-label="Instagram" class="social-circle">IG</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'home' %}#services">Services</a></li>
+            <li><a href="{% url 'home' %}#sectors">Sectors</a></li>
+            <li><a href="{% url 'home' %}#partnerships">Partnerships</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Accra, Ghana</p>
+          <p><a href="mailto:info@impactvate.com">info@impactvate.com</a></p>
+          <p>+233 20 300 5311</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Impactvate Solutions. All rights reserved.</p>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+      <img
+        src="{% static 'main/img/impact_logo-removebg-preview.png' %}"
+        alt="Impactvate Logo"
+        class="footer-logo"
+      />
+    </footer>
+  </body>
+</html>
