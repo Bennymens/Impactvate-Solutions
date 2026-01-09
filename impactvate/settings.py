@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-ikp$f^(786!q*)(-s6$+l#ry-&ze!!d!4mycaq*12yzp#-ftc6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['impactvate-solutions.onrender.com']
 
 
 # Application definition
