@@ -46,6 +46,11 @@
 
     <!-- ================= PARTNERSHIP HERO ================= -->
     <section class="hero partnership-hero">
+      <img
+        class="hero-image"
+        src="{% static 'main/img/dark-businesswoman-shaking-hands-with-male-colleague.jpg' %}"
+        alt="Partnership handshake"
+      />
       <div class="hero-gradient"></div>
       <div class="container hero-content">
         <p class="breadcrumb">
@@ -53,13 +58,12 @@
           <span>Partnerships</span>
         </p>
         <h1>
-          Built for Collaboration<br />
-          and Long-Term Impact
+          Collaborate for<br />
+          Lasting Change
         </h1>
         <p class="hero-subtitle">
-          We work with development agencies, governments, investors, and private
-          sector partners to turn commitments into measurable results on the
-          ground.
+          Join us in building sustainable partnerships that deliver real impact
+          across West Africa.
         </p>
       </div>
     </section>
@@ -219,7 +223,7 @@
               >Impactvate Solutions</a
             >
           </p>
-          <a href="contact.html" class="btn btn-primary btn-block">
+          <a href="{% url 'contact' %}" class="btn btn-primary btn-block">
             Contact Our Team
           </a>
         </div>
@@ -265,7 +269,7 @@
 
       <div class="container footer-bottom">
         <p>&copy; 2026 Impactvate Solutions. All rights reserved.</p>
-        <a href="#" class="footer-link">Privacy Policy</a>
+        <span class="footer-link">Contact Our Team</span>
       </div>
       <img
         src="{% static 'main/img/impact_logo-removebg-preview.png' %}"

@@ -1006,7 +1006,8 @@ ul {
 
 .footer-link {
   font-size: 0.8rem;
-  color: #c3c3c3;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .footer-link:hover {
@@ -1200,8 +1201,9 @@ ul {
   }
 
   .footer-logo {
-    width: 375px;
-    right: -112px;
+    width: 900px;
+    right: -100px;
     bottom: 0;
+    opacity: 0.2;
   }
 }

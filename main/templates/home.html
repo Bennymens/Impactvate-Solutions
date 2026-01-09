@@ -33,9 +33,9 @@
 
         <nav class="nav-links">
           <a href="{% url 'about' %}">About Us</a>
-          <a href="#services">Services</a>
+          <a href="{% url 'services' %}">Services</a>
           <a href="#sectors">Sectors</a>
-          <a href="#partnerships">Partnerships</a>
+          <a href="{% url 'partnership' %}">Partnerships</a>
           <a href="{% url 'contact' %}">Contact</a>
           <a href="{% url 'contact' %}" class="btn btn-primary nav-cta"
             >Partner With Us</a
@@ -221,7 +221,7 @@
 
       <div class="container footer-bottom">
         <p>&copy; 2026 Impactvate Solutions. All rights reserved.</p>
-        <a href="#" class="footer-link">Privacy Policy</a>
+        <span class="footer-link">Contact Our Team</span>
       </div>
       <img
         src="{% static 'main/img/impact_logo-removebg-preview.png' %}"
