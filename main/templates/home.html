@@ -57,7 +57,7 @@
           <a href="{% url 'about' %}">About Us</a>
           <a href="{% url 'services' %}">Services</a>
           <!-- Changed from #services -->
-          <a href="#sectors">Sectors</a>
+          <a href="{% url 'news' %}">News</a>
           <!-- Keep as anchor if no dedicated page -->
           <a href="{% url 'partnership' %}">Partnerships</a>
           <!-- Changed from #partnerships -->
@@ -258,7 +258,7 @@
             <li><a href="#top">Home</a></li>
             <li><a href="{% url 'about' %}">About Us</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#sectors">Sectors</a></li>
+            <li><a href="{% url 'news' %}">News</a></li>
             <li><a href="#partnerships">Partnerships</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
           </ul>

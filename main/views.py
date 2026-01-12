@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
+from django.template.loader import render_to_string
 from django.conf import settings
 from .forms import ContactForm
 
@@ -17,6 +18,9 @@ def services(request):
 def partnership(request):
     return render(request, 'partnership.html')
 
+def news(request):
+    return render(request, 'news.html')
+
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -30,15 +34,30 @@ def contact(request):
             help = form.cleaned_data['help']
             message = form.cleaned_data['message']
             
-            # Send email
+            # Send email to company
             send_mail(
                 'Contact Form Submission',
                 f'From: {name} ({email})\nOrganisation: {organisation}\nCountry: {country}\nPhone: {phone_code} {phone}\nHow can we help: {help}\n\n{message}',
                 settings.DEFAULT_FROM_EMAIL,
-                ['your-email@example.com'],  # Replace with your email
+                ['info@impactvate.com'],
                 fail_silently=False,
             )
-            # You can add a success message or redirect
+            
+            # Send auto-response to user
+            subject = 'Thank you for contacting Impactvate Solutions'
+            html_message = render_to_string('emails/auto_response.html', {
+                'name': name,
+                'logo_url': settings.STATIC_URL + 'main/img/impact_logo-removebg-preview.png'
+            })
+            email_message = EmailMessage(
+                subject,
+                html_message,
+                settings.DEFAULT_FROM_EMAIL,
+                [email],
+            )
+            email_message.content_subtype = 'html'
+            email_message.send(fail_silently=False)
+            
             return render(request, 'contact.html', {'form': ContactForm(), 'success': True})
     else:
         form = ContactForm()
