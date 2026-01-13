@@ -31,6 +31,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['impactvate-solutions.onrender.com', 'localhost', '127.0.0.1', 'impactvate.com', 'www.impactvate.com']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://impactvate.com',
+    'https://www.impactvate.com',
+    'https://impactvate-solutions.onrender.com',
+]
+
 
 # Application definition
 
