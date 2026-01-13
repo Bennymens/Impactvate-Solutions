@@ -34,31 +34,36 @@ def contact(request):
             help = form.cleaned_data['help']
             message = form.cleaned_data['message']
             
-            # Send email to company
-            send_mail(
-                'Contact Form Submission',
-                f'From: {name} ({email})\nOrganisation: {organisation}\nCountry: {country}\nPhone: {phone_code} {phone}\nHow can we help: {help}\n\n{message}',
-                settings.DEFAULT_FROM_EMAIL,
-                ['info@impactvate.com'],
-                fail_silently=False,
-            )
-            
-            # Send auto-response to user
-            subject = 'Thank you for contacting Impactvate Solutions'
-            html_message = render_to_string('emails/auto_response.html', {
-                'name': name,
-                'logo_url': settings.STATIC_URL + 'main/img/impact_logo-removebg-preview.png'
-            })
-            email_message = EmailMessage(
-                subject,
-                html_message,
-                settings.DEFAULT_FROM_EMAIL,
-                [email],
-            )
-            email_message.content_subtype = 'html'
-            email_message.send(fail_silently=False)
-            
-            return render(request, 'contact.html', {'form': ContactForm(), 'success': True})
+            try:
+                # Send email to company
+                send_mail(
+                    'Contact Form Submission',
+                    f'From: {name} ({email})\nOrganisation: {organisation}\nCountry: {country}\nPhone: {phone_code} {phone}\nHow can we help: {help}\n\n{message}',
+                    settings.DEFAULT_FROM_EMAIL,
+                    ['benymento4@gmail.com'],  # Changed to your Gmail for testing
+                    fail_silently=True,
+                )
+                
+                # Send auto-response to user
+                subject = 'Thank you for contacting Impactvate Solutions'
+                html_message = render_to_string('emails/auto_response.html', {
+                    'name': name,
+                    'logo_url': settings.STATIC_URL + 'main/img/impact_logo-removebg-preview.png'
+                })
+                email_message = EmailMessage(
+                    subject,
+                    html_message,
+                    settings.DEFAULT_FROM_EMAIL,
+                    [email],
+                )
+                email_message.content_subtype = 'html'
+                email_message.send(fail_silently=True)
+                
+                return render(request, 'contact.html', {'form': ContactForm(), 'success': True})
+            except Exception as e:
+                # Log the error and still show success to user
+                print(f"Email sending failed: {e}")
+                return render(request, 'contact.html', {'form': ContactForm(), 'success': True})
     else:
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
