@@ -286,38 +286,123 @@
     <!-- Chatbot Widget -->
     <div id="chatbot-widget">
       <div id="chatbot-header">
-        <span>ImpactBot</span>
+        <span>🤖 IMPACTVATE SOLUTIONS</span>
         <button id="chatbot-close">&times;</button>
       </div>
       <div id="chatbot-messages"></div>
+      <div id="chatbot-options" class="chatbot-options" style="display: none">
+        <button class="chatbot-option-btn" data-option="services">
+          Our Services
+        </button>
+        <button class="chatbot-option-btn" data-option="about">About Us</button>
+        <button class="chatbot-option-btn" data-option="contact">
+          Contact Info
+        </button>
+        <button class="chatbot-option-btn" data-option="faq">FAQ</button>
+      </div>
       <div id="chatbot-input-area">
         <input
           type="text"
           id="chatbot-input"
-          placeholder="Ask me a question..."
+          placeholder="Type your message..."
         />
         <button id="chatbot-send">Send</button>
       </div>
     </div>
     <div id="chatbot-toggle">
-      <span>💬</span>
+      <span>🤖</span>
     </div>
 
     <script>
-      // FAQ data
-      const faqs = {
-        "what is impactvate":
-          "Impactvate Solutions is a company dedicated to delivering measurable impact through innovative solutions.",
-        "what services do you offer":
-          "We offer consulting, technology solutions, and partnership services tailored to your needs.",
-        "how can i contact you":
-          "You can contact us via email at info@impactvate.com or call +233 24 853 5282.",
-        "where are you located": "We are located in Accra, Ghana.",
-        "what sectors do you work in":
-          "We work in various sectors including technology, business, and more.",
-        hello: "Hi!",
-        default:
-          "I'm sorry, I don't have an answer for that. Please contact us directly for more information.",
+      // Chatbot state management
+      let chatbotState = "greeting";
+
+      // Response data
+      const responses = {
+        greeting: {
+          message:
+            "Hello! I'm the Impactvate Solutions assistant. How can I help you today?",
+          options: [
+            "tell_me_about_yourself",
+            "services",
+            "about",
+            "contact",
+            "faq",
+          ],
+        },
+        tell_me_about_yourself: {
+          message:
+            "I'm the Impactvate Solutions AI assistant, here to help you learn about our company, services, and how we can work together to create sustainable development impact in Africa.",
+          options: ["services", "about", "contact", "back"],
+        },
+        services: {
+          message:
+            "We offer comprehensive development solutions including:\n\n• Project Design & Implementation\n• Sustainable Development Consulting\n• Circular Economy Solutions\n• Partnership Facilitation\n• Impact Measurement & Evaluation\n\nWould you like to know more about any specific service?",
+          options: ["project_design", "consulting", "partnerships", "back"],
+        },
+        about: {
+          message:
+            "Impactvate Solutions bridges the execution gap in Africa's development ecosystem. We're based in Accra, Ghana, and specialize in turning development strategies into measurable impact.\n\nOur mission: Design, implement, and scale sustainable development and circular economy projects that empower communities and drive inclusive growth.",
+          options: ["mission", "values", "team", "back"],
+        },
+        contact: {
+          message:
+            "Get in touch with us:\n\n📧 Email: info@impactvate.com\n📞 Phone: +233 24 853 5282\n📍 Location: Accra, Ghana\n\nWe'd love to discuss your project!",
+          options: ["back"],
+        },
+        faq: {
+          message: "Here are some frequently asked questions:",
+          options: ["faq_services", "faq_location", "faq_contact", "back"],
+        },
+        project_design: {
+          message:
+            "Our Project Design & Implementation service includes:\n\n• Needs assessment and stakeholder mapping\n• Strategy development with measurable KPIs\n• Implementation planning and execution\n• Monitoring, evaluation, and adaptive management\n• Capacity building for local teams\n\nReady to start your project?",
+          options: ["contact", "back"],
+        },
+        consulting: {
+          message:
+            "Our Sustainable Development Consulting covers:\n\n• Environmental impact assessments\n• Circular economy strategy development\n• Community engagement planning\n• Risk assessment and mitigation\n• Sustainability reporting\n\nNeed expert consultation?",
+          options: ["contact", "back"],
+        },
+        partnerships: {
+          message:
+            "We facilitate meaningful partnerships between:\n\n• International development organizations\n• Local governments and communities\n• Private sector companies\n• NGOs and civil society groups\n• Academic institutions\n\nInterested in partnership opportunities?",
+          options: ["contact", "back"],
+        },
+        mission: {
+          message:
+            "Our mission is to design, implement, and scale sustainable development and circular economy projects that empower communities, strengthen institutions, and accelerate inclusive growth across Africa.",
+          options: ["back"],
+        },
+        values: {
+          message:
+            "Our core values:\n\n💛 Integrity - Transparency and trust in every partnership\n💡 Innovation - Creative solutions for real-world challenges\n🤝 Collaboration - Co-creating outcomes with communities\n🌱 Sustainability - Long-term environmental and social resilience\n⭐ Excellence - Global standards with local relevance",
+          options: ["back"],
+        },
+        team: {
+          message:
+            "Our team combines deep local expertise with international best practices. We're headquartered in Accra, Ghana, with extensive experience across West Africa and beyond.",
+          options: ["contact", "back"],
+        },
+        faq_services: {
+          message:
+            "We specialize in sustainable development and circular economy projects. Our services include project design, implementation, consulting, partnership facilitation, and impact measurement. We work across sectors like agriculture, waste management, renewable energy, and community development.",
+          options: ["services", "back"],
+        },
+        faq_location: {
+          message:
+            "We're proudly based in Accra, Ghana, with extensive experience working across West Africa. Our local presence allows us to understand regional context while maintaining international standards.",
+          options: ["contact", "back"],
+        },
+        faq_contact: {
+          message:
+            "Reach out to us at info@impactvate.com or call +233 24 853 5282. We're always happy to discuss potential projects and partnerships!",
+          options: ["contact", "back"],
+        },
+        back: {
+          message: "What else can I help you with?",
+          options: ["services", "about", "contact", "faq"],
+        },
       };
 
       // Chatbot functionality
@@ -327,6 +412,7 @@
       const chatbotMessages = document.getElementById("chatbot-messages");
       const chatbotInput = document.getElementById("chatbot-input");
       const chatbotSend = document.getElementById("chatbot-send");
+      const chatbotOptions = document.getElementById("chatbot-options");
 
       // Toggle chatbot
       chatbotToggle.addEventListener("click", () => {
@@ -335,7 +421,7 @@
           chatbotWidget.style.display === "";
         chatbotWidget.style.display = isHidden ? "flex" : "none";
         if (isHidden && chatbotMessages.children.length === 0) {
-          addMessage("bot", "Hello, I'm ImpactBot. How may I help you?");
+          showGreeting();
         }
       });
 
@@ -344,14 +430,24 @@
         chatbotWidget.style.display = "none";
       });
 
+      // Option button clicks
+      chatbotOptions.addEventListener("click", (e) => {
+        if (e.target.classList.contains("chatbot-option-btn")) {
+          const option = e.target.dataset.option;
+          handleOption(option);
+        }
+      });
+
       // Send message
       function sendMessage() {
-        const message = chatbotInput.value.trim().toLowerCase();
+        const message = chatbotInput.value.trim();
         if (message) {
           addMessage("user", message);
           const response = getResponse(message);
-          setTimeout(() => addMessage("bot", response), 500);
+          setTimeout(() => addMessage("bot", response.message), 500);
+          setTimeout(() => showOptions(response.options), 1000);
           chatbotInput.value = "";
+          chatbotOptions.style.display = "none";
         }
       }
 
@@ -360,6 +456,54 @@
         if (e.key === "Enter") sendMessage();
       });
 
+      function showGreeting() {
+        const greeting = responses.greeting;
+        addMessage("bot", greeting.message);
+        showOptions(greeting.options);
+      }
+
+      function handleOption(option) {
+        chatbotState = option;
+        const response = responses[option];
+        addMessage("user", getOptionText(option));
+        setTimeout(() => addMessage("bot", response.message), 500);
+        setTimeout(() => showOptions(response.options), 1000);
+      }
+
+      function getOptionText(option) {
+        const optionTexts = {
+          tell_me_about_yourself: "Tell me about yourself",
+          services: "Tell me about your services",
+          about: "Tell me about Impactvate Solutions",
+          contact: "How can I contact you?",
+          faq: "Frequently Asked Questions",
+          project_design: "Project Design & Implementation",
+          consulting: "Sustainable Development Consulting",
+          partnerships: "Partnership Facilitation",
+          mission: "Our Mission",
+          values: "Our Values",
+          team: "Our Team",
+          faq_services: "What services do you offer?",
+          faq_location: "Where are you located?",
+          faq_contact: "How can I contact you?",
+          back: "Go back",
+        };
+        return optionTexts[option] || option;
+      }
+
+      function showOptions(options) {
+        chatbotOptions.innerHTML = "";
+        options.forEach((option) => {
+          const button = document.createElement("button");
+          button.className = "chatbot-option-btn";
+          button.dataset.option = option;
+          button.textContent = getOptionText(option);
+          chatbotOptions.appendChild(button);
+        });
+        chatbotOptions.style.display = "flex";
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+
       function addMessage(sender, text) {
         const messageDiv = document.createElement("div");
         messageDiv.className = `chatbot-message ${sender}`;
@@ -367,7 +511,8 @@
         const avatar = document.createElement("img");
         avatar.className = "chatbot-avatar";
         if (sender === "bot") {
-          avatar.src = "/static/main/img/impact_logo-removebg-preview.png";
+          avatar.src =
+            "{% static 'main/img/impact_logo-removebg-preview.png' %}";
         } else {
           avatar.src =
             "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiNFNUU1RTUiLz4KPHBhdGggZD0iTTIwIDIwQzIyLjc2MTQgMjAgMjUgMTcuNzYxNCAyNSAxNUMyNSAyMi4yMzg2IDIyLjIzODYgMjAgMjAgMjBaIiBmaWxsPSIjOUI5QkE0Ii8+Cjwvc3ZnPgo=";
@@ -375,8 +520,7 @@
 
         const textDiv = document.createElement("div");
         textDiv.className = "chatbot-text";
-        textDiv.textContent = text;
-
+        textDiv.innerHTML = text.replace(/\n/g, "<br>");
         messageDiv.appendChild(avatar);
         messageDiv.appendChild(textDiv);
         chatbotMessages.appendChild(messageDiv);
@@ -384,12 +528,22 @@
       }
 
       function getResponse(question) {
-        for (const key in faqs) {
-          if (question.includes(key)) {
-            return faqs[key];
-          }
-        }
-        return faqs["default"];
+        const lowerQuestion = question.toLowerCase();
+
+        // Simple keyword matching for typed messages
+        if (lowerQuestion.includes("service")) return responses.services;
+        if (lowerQuestion.includes("about")) return responses.about;
+        if (lowerQuestion.includes("contact")) return responses.contact;
+        if (lowerQuestion.includes("faq") || lowerQuestion.includes("question"))
+          return responses.faq;
+        if (lowerQuestion.includes("hello") || lowerQuestion.includes("hi"))
+          return responses.greeting;
+
+        return {
+          message:
+            "I'm here to help! You can click on the options above or ask me about our services, company information, or contact details.",
+          options: ["services", "about", "contact", "faq"],
+        };
       }
     </script>
   </body>
